@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MovieBox - Tonton Film Gratis dan Nonton Drama Online</title>
+<meta name="description" content="MovieBox — tonton film gratis, drama, anime, K-Drama. 34 section, 442 judul, 12 banner, 10 kategori, 20 endpoint API live.">
+<meta property="og:title" content="MovieBox - Tonton Film Gratis">
+<meta property="og:description" content="34 section • 442 judul • 12 banner • 20 endpoint live • detail + episode + player HLS">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#101114">
+<link rel="icon" href="https://h5-static.aoneroom.com/oneroomProject/icon/moviebox-official.jpg">
+<link rel="stylesheet" href="/style.css">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"MovieBox","potentialAction":{"@type":"SearchAction","target":"/id/search?query={search_term_string}","query-input":"required name=search_term_string"}}</script>
+</head>
+<body>
+<div class="layout">
+  <aside class="pc-side" id="sidebar">
+    <a class="side-logo" href="/" onclick="go('/');return false" title="MovieBox">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" fill="#1cb7ff"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5" stroke="#101114" stroke-width="1.6"/><path d="M10 9.5v5l4.5-2.5z" fill="#101114"/></svg>
+      <span>MovieBox</span>
+    </a>
+    <nav class="pc-nav-list" id="sideNav"></nav>
+    <div class="line"></div>
+    <div class="side-foot">
+      <a href="https://h5-static.aoneroom.com/spa/html/moviebox-privacy-policy.html" target="_blank" rel="noopener">Kebijakan Privasi</a>
+      <a href="https://h5-static.aoneroom.com/spa/html/moviebox-terms-of-use.html" target="_blank" rel="noopener">Perjanjian Pengguna</a>
+      <a href="mailto:moviebox.ng@mbox.ng">Hubungi kami</a>
+      <div class="vercel-tag">● v3 • 34 section live</div>
+      <button class="btn dark small" id="loginBtn" onclick="openLogin()">Login token</button>
+    </div>
+  </aside>
+  <div class="main-col">
+    <header class="pc-header">
+      <div class="pc-header-inner">
+        <button class="mob-search" onclick="focusSearch()" aria-label="cari">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+        <div class="pc-search-box" id="searchBox">
+          <span class="s-ico"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+          <input id="q" type="text" placeholder="Cari film / acara TV — cth: naruto, terikat janji" autocomplete="off">
+          <div id="suggest" class="suggest"></div>
+        </div>
+        <div class="pc-head-right">
+          <button class="fav-btn" onclick="go('/id/favorites')" title="Favoritku" id="favBtn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 8.6c0 5.4-8.8 10.4-8.8 10.4S3.2 14 3.2 8.6A4.6 4.6 0 0 1 12 6.1a4.6 4.6 0 0 1 8.8 2.5z"/></svg>
+            <span id="favCount">0</span>
+          </button>
+          <button class="dl-btn" onclick="go('/id/download-app')">Aplikasi</button>
+          <span id="apiDot" class="api-dot" title="status API">●</span>
+        </div>
+      </div>
+      <nav class="chip-row" id="filters"></nav>
+      <div class="hot-row" id="hotRow"></div>
+    </header>
+    <div id="count" class="count"></div>
+    <div id="view-home">
+      <div class="banner-pc" id="hero"></div>
+      <div id="catRow" class="cat-row-wrap"></div>
+      <main id="rows"></main>
+    </div>
+    <div id="view-detail" style="display:none"></div>
+    <div id="view-list" style="display:none"></div>
+    <footer class="pc-footer">
+      Clone riset dari <b>https://themoviebox.org/id</b> — <span id="stat"></span> · 20 endpoint live (<code>/api/*</code>)<br>
+      Gambar & trailer hotlink pbcdnw / macdn.aoneroom.com · player HLS via hls.js · stream asli butuh login/VIP (tombol "Login token" di sidebar)<br>
+      <a href="mailto:moviebox.ng@mbox.ng">Hubungi kami</a> · <a href="https://h5-static.aoneroom.com/spa/html/moviebox-privacy-policy.html" target="_blank" rel="noopener">Kebijakan Privasi</a> · <a href="https://h5-static.aoneroom.com/spa/html/moviebox-terms-of-use.html" target="_blank" rel="noopener">Perjanjian Pengguna</a>
+    </footer>
+  </div>
+</div>
+<nav class="m-tabs" id="mTabs"></nav>
+<div id="modal" onclick="if(event.target===this)closeModal()"><div id="modalCard"></div></div>
+<script src="/app.js"></script>
+</body>
+</html>
