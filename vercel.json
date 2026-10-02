@@ -1,41 +1,88 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
+  "rewrites": [
     {
-      "source": "/data.json",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+      "source": "/id/moviesDetail/:slug",
+      "destination": "/index.html"
     },
     {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, X-Mb-Token, Authorization" }
-      ]
+      "source": "/moviesDetail/:slug",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/newWeb/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/web/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/ranking-list/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/ranking-list",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/upcoming/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/upcoming",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/download-app",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/favorites",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/movieFilter",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/trending",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/search",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/actor/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/tab/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/platform/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/novel",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/old-moviebox",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/id/live/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/detail/:id",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/actor/:path*",
+      "destination": "/index.html"
     }
-  ],
-  "rewrites": [
-    { "source": "/id/moviesDetail/:slug", "destination": "/index.html" },
-    { "source": "/moviesDetail/:slug", "destination": "/index.html" },
-    { "source": "/id/newWeb/:path*", "destination": "/index.html" },
-    { "source": "/id/web/:path*", "destination": "/index.html" },
-    { "source": "/id/ranking-list/:path*", "destination": "/index.html" },
-    { "source": "/id/ranking-list", "destination": "/index.html" },
-    { "source": "/id/upcoming/:path*", "destination": "/index.html" },
-    { "source": "/id/upcoming", "destination": "/index.html" },
-    { "source": "/id/download-app", "destination": "/index.html" },
-    { "source": "/id/favorites", "destination": "/index.html" },
-    { "source": "/id/movieFilter", "destination": "/index.html" },
-    { "source": "/id/trending", "destination": "/index.html" },
-    { "source": "/id/search", "destination": "/index.html" },
-    { "source": "/id/actor/:path*", "destination": "/index.html" },
-    { "source": "/id/tab/:path*", "destination": "/index.html" },
-    { "source": "/id/platform/:path*", "destination": "/index.html" },
-    { "source": "/id/novel", "destination": "/index.html" },
-    { "source": "/id/old-moviebox", "destination": "/index.html" },
-    { "source": "/id/live/:path*", "destination": "/index.html" },
-    { "source": "/detail/:id", "destination": "/index.html" },
-    { "source": "/actor/:path*", "destination": "/index.html" }
   ]
 }

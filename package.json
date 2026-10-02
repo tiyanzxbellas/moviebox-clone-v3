@@ -1,6 +1,5 @@
 {
-  "name": "moviebox-clone",
-  "version": "1.0.0",
+  "name": "moviebox-clone-v3",
   "private": true,
-  "type": "module"
+  "version": "3.0.0"
 }
